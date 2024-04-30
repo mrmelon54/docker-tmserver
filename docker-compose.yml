@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   tmserver:
-    image: fanyx/tmserver:2.1.1
+    image: mrmelon54/tmserver:latest
     container_name: trackmania_tmserver
     depends_on:
      - db
@@ -9,8 +9,6 @@ services:
     env_file: .env
     volumes:
      - ./tracks:/var/lib/tmserver/GameData/Tracks/Challenges/Custom # => Custom tracks
-     - ./playlist.txt:/var/lib/tmserver/playlist.txt # => Custom playlist
-     - ./blacklist:/var/lib/xaseco/blacklist # => Plugin blacklist
      - ./plugins:/var/lib/xaseco/plugins/custom # => Custom plugins
      - ./config:/var/lib/xaseco/config # => Custom configuration files
     ports:
